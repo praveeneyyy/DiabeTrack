@@ -1,6 +1,6 @@
 # DiabeTrack
 
-DiabeTrack is an interactive diabetes risk assessment web application built with Flask. It guides users through a polished, question-driven experience and delivers a clear final report with a positive/negative diabetes prediction.
+DiabeTrack is an interactive diabetes risk assessment web application built with FastAPI. It guides users through a polished, question-driven experience and delivers a clear final report with a positive/negative diabetes prediction.
 
 ## Key Features
 
@@ -30,7 +30,7 @@ DiabeTrack is an interactive diabetes risk assessment web application built with
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/Diabetes-Prediction-master.git
-   cd Diabetes-Prediction-master/flask
+   cd Diabetes-Prediction-master
    ```
 2. Create and activate a Python virtual environment:
    ```bash
@@ -41,13 +41,13 @@ DiabeTrack is an interactive diabetes risk assessment web application built with
    ```bash
    pip install -r requirements.txt
    ```
-4. Run the Flask app:
+4. Run the FastAPI app:
    ```bash
-   python app.py
+   uvicorn app:app --reload
    ```
 5. Open the app in your browser:
    ```
-   http://127.0.0.1:5000/
+   http://127.0.0.1:8000/
    ```
 
 ## Usage

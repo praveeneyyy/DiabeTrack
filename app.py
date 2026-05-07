@@ -10,7 +10,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 from sklearn.preprocessing import MinMaxScaler
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent / "flask"
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="your_random_secret_key_here")
@@ -181,7 +181,7 @@ async def predict(request: Request):
     form = await request.form()
     float_features = [float(value) for value in form.values()]
     final_features = [np.array(float_features)]
-    prediction = int(model.predict(sc.transform(final_features))[0])
+    prediction = model.predict(sc.transform(final_features))[0]
     prediction_text = (
         "You have Diabetes, please consult a Doctor."
         if prediction == 1
